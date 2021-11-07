@@ -246,11 +246,6 @@ function remove_category_title_prefix( $title ) {
 add_filter( 'get_the_archive_title', 'remove_category_title_prefix' );
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';

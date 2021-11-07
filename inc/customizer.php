@@ -114,7 +114,6 @@ add_action('customize_register', 'eirerepublic_add_sections');
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function eirerepublic_remove_sections( $wp_customize ) {
-	$wp_customize->remove_section('header_image');
 	$wp_customize->remove_section('colors');
 	$wp_customize->remove_section('background_image');
 }
