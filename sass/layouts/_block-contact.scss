@@ -1,0 +1,16 @@
+.contact__block {
+    background: $color__brand-beige;
+
+    h2 {
+        color: $color__brand-green;
+        margin-top: 0;
+    }
+
+    p {
+        color: $color__brand-brown-dark;
+    }
+
+    a {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,16 @@
+.recent-posts {
+    .category {
+        text-transform: uppercase;
+        color: $color__brand-gold;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+
+    .entry-title {
+        > h4 {
+            color: $color__brand-brown-dark;
+            margin-top: 1rem;
+        }
+    }
+}

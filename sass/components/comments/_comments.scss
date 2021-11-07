@@ -1,0 +1,39 @@
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.comments-area {
+	border-top: 1px solid $color__brand-grey-lighter;
+
+	.comment-body {
+		margin-bottom: 1.5em;
+
+		.comment-author {
+			a {
+				color: $color__brand-green;
+			}
+	
+			> .says {
+				display: none;
+			}
+		}
+	
+		.comment-metadata {
+			a {
+				color: $color__brand-grey-light;
+			}
+		}
+	
+		.comment-content {
+			> p {
+				color: $color__brand-brown-dark;
+			}
+		}
+	}
+}
+
+

@@ -1,0 +1,70 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	font-family: $font__main-primary;
+	font-weight: 600;
+	border: none;
+	border-radius: 30px;
+	background: $color__brand-green;
+	color: #fff !important;
+	padding: 0.6em 1.2em;
+
+	&:hover {
+		color: #fff;
+		border-color: $color__brand-green;
+	}
+
+	&:active,
+	&:focus {
+		color: #fff;
+		border-color: $color__brand-green;
+	}
+}
+
+.btn {
+	font-weight: 600;
+	border: none;
+	border-radius: 30px;
+	padding: 0.6em 1.2em;
+}
+
+.btn-primary {
+	background: $color__brand-green;
+	color: #fff !important;
+
+	&:hover {
+		color: #fff;
+		background-color: $color__brand-green;
+	}
+
+	&:focus {
+		box-shadow: none;
+	}
+
+	&:active,
+	&:focus {
+		color: #fff;
+		background-color: $color__brand-green;
+	}
+}
+
+.btn-secondary {
+	background: $color__brand-gold;
+	color: #fff !important;
+
+	&:hover {
+		color: #fff;
+		background-color: $color__brand-gold;
+	}
+
+	&:focus {
+		box-shadow: none;
+	}
+
+	&:active,
+	&:focus {
+		color: #fff;
+		background-color: $color__brand-gold;
+	}
+}

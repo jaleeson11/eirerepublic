@@ -1,0 +1,83 @@
+<?php
+/**
+ * The template for displaying comments
+ *
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package eirerepublic
+ */
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
+	return;
+}
+?>
+
+<div class="container">
+	<div class="row">
+		<div class="col-12 col-lg-8 offset-lg-2">
+			<div id="comments" class="comments-area mt-5">
+
+				<?php
+				// You can start editing here -- including this comment!
+				if ( have_comments() ) :
+					?>
+					<h3 class="comments-title">
+						<?php
+						$eirerepublic_comment_count = get_comments_number();
+						if ( '1' === $eirerepublic_comment_count ) {
+							printf(
+								/* translators: 1: title. */
+								esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'eirerepublic' ),
+								'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+							);
+						} else {
+							printf( 
+								/* translators: 1: comment count number, 2: title. */
+								esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $eirerepublic_comment_count, 'comments title', 'eirerepublic' ) ),
+								number_format_i18n( $eirerepublic_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+							);
+						}
+						?>
+					</h3><!-- .comments-title -->
+
+					<?php the_comments_navigation(); ?>
+
+					<ol class="comment-list">
+						<?php
+						wp_list_comments(
+							array(
+								'style'      => 'ol',
+								'short_ping' => true,
+							)
+						);
+						?>
+					</ol><!-- .comment-list -->
+
+					<?php
+					the_comments_navigation();
+
+					// If comments are closed and there are comments, let's leave a little note, shall we?
+					if ( ! comments_open() ) :
+						?>
+						<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'eirerepublic' ); ?></p>
+						<?php
+					endif;
+
+				endif; // Check for have_comments().
+
+				comment_form();
+				?>
+
+			</div><!-- #comments -->
+		</div>
+	</div>
+</div>

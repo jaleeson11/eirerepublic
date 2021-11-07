@@ -1,0 +1,10 @@
+body {
+	position: relative;
+	min-height: 100vh;
+	padding-bottom: 50px;
+	background: $color__background-body; // Fallback for when there is no custom background color defined.
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	color: $color__brand-brown-dark;
+	line-height: $font__line-height-body;
+}
