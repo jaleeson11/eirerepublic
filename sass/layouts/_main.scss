@@ -1,5 +1,11 @@
 section {
     padding: 5rem 0;
+
+    > .wp-block-group {
+        > .wp-block-group__inner-container {
+            margin: 0 50px;
+        }
+    }
 }
 
 @media only screen and (max-width: 767px) {

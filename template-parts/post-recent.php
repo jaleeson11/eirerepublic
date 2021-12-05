@@ -41,7 +41,9 @@
                         <?php endif; ?>
                     </a>
                     <div class="entry-title">
-                        <h4><?php the_title(); ?></h4>
+                        <a href="<?php the_permalink(); ?>">
+                            <h4><?php the_title(); ?></h4>
+                        </a>
                     </div>
                     <div class="entry-content">
                         <?php

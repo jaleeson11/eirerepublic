@@ -62,21 +62,27 @@
 get_header();
 ?>
 
-<main class="site-main contact pt-5">
+<main class="site-main contact">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+        <header class="contact-form-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-8 offset-md-2 mt-5 text-center">
+                        <h1><?php echo get_theme_mod('contact_page_heading'); ?></h1>
+                        <p><?php echo get_theme_mod('contact_page_text'); ?></p>
+                        <p class="admin-email d-flex align-items-center justify-content-center">
+                            <span class="circle"></span>
+                            <?php echo get_option('admin_email'); ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-			get_template_part( 'template-parts/content', 'page' );
-
-		endwhile; // End of the loop.
-		?>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-8 offset-md-2">
-                    <section class="contact-form">
+        <section class="contact-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-8 offset-md-2">
                         <?php echo $response; ?>
                         <form action="<?php the_permalink(); ?>" method="post">
                             <div class="row">
@@ -102,10 +108,10 @@ get_header();
                             </div>
                             <input type="hidden" name="submitted" value="1">
                         </form> 
-                    </section>  
+                    </div>
                 </div>
-            </div>
-        </div> 
+            </div> 
+        </section>  
 
         <?php get_template_part('template-parts/post-recent'); ?>
 

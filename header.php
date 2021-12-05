@@ -13,7 +13,7 @@
 	<header class="site-header">
 		<nav class="navbar navbar-light navbar-expand-lg">
 			<div class="container">
-				<a class="navbar-brand" href="#"><img src="<?php echo get_custom_logo_url(); ?>"></a>
+				<a class="navbar-brand" href="/"><img src="<?php echo get_custom_logo_url(); ?>"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>

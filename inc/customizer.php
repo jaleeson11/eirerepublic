@@ -44,6 +44,32 @@ function eirerepublic_add_sections( $wp_customize ) {
 		'title' => 'Custom'
 	));
 
+	$wp_customize->add_section( 'contact_page', array(
+		'title' => 'Contact Page',
+		'panel' => 'custom'
+	));
+
+	$wp_customize->add_setting( 'contact_page_heading', array(
+		'default'   => 'Example heading text'
+	));
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_page_heading_control', array(
+		'label' => 'Heading',
+		'section' => 'contact_page',
+		'settings' => 'contact_page_heading'
+	)));
+
+	$wp_customize->add_setting( 'contact_page_text', array(
+		'default'   => 'Example paragraph text'
+	));
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'contact_page_text_control', array(
+		'label' => 'Text',
+		'section' => 'contact_page',
+		'settings' => 'contact_page_text',
+		'type' => 'textarea'
+	)));
+
 	$wp_customize->add_section( 'contact_block', array(
 		'title' => 'Contact Block',
 		'panel' => 'custom'
@@ -73,37 +99,6 @@ function eirerepublic_add_sections( $wp_customize ) {
 		'section' => 'contact_block',
 		'settings' => 'contact_block_text',
 		'type' => 'textarea'
-	)));
-
-	$wp_customize->add_setting( 'home_hero_heading', array(
-		'default'   => 'Example heading text'
-	));
-
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'home_hero_heading_control', array(
-		'label' => 'Heading',
-		'section' => 'home',
-		'settings' => 'home_hero_heading'
-	)));
-
-	$wp_customize->add_setting( 'home_hero_text', array(
-		'default'   => 'Example paragraph text'
-	));
-
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'home_hero_text_control', array(
-		'label' => 'Text',
-		'section' => 'home',
-		'settings' => 'home_hero_text',
-		'type' => 'textarea'
-	)));
-
-	$wp_customize->add_setting('home_hero_image');
-    
-	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'home_hero_image_control', array(
-		'label' => 'Image',
-		'section' => 'home',
-		'settings' => 'home_hero_image',
-		'width' => 500,
-		'height' => 500
 	)));
 }
 add_action('customize_register', 'eirerepublic_add_sections');

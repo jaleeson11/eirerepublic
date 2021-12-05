@@ -1,3 +1,2 @@
-import * as Headroom from './headroom.js';
-
-Headroom.initHeadroom();
+import './headroom.js';
+import './post.js';

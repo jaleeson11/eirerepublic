@@ -18,7 +18,7 @@
 }
 
 .post {
-	> .post-thumbnail {
+	.post-thumbnail {
 		margin-top: 1.5em;
 
 		> img {
@@ -26,14 +26,54 @@
 		}
 	}
 
-	.entry-title {
-		margin-top: 1.5rem;
-		margin-bottom: 0;
-		color: $color__brand-green;
-	}
+	> .entry-header {
+		padding: 5rem 0;
+		position: relative;
 
-	.entry-meta {
-		color: $color__brand-gold;
+		&::before {
+			@include image-overlay(none);
+		}
+
+		.entry-header__block {
+			.entry-title,
+			.entry-meta,
+			.entry-excerpt {
+				position: relative;
+			}
+
+			.entry-title {
+				margin-top: 1.5rem;
+				margin-bottom: 0;
+				color: #fff;
+			}
+		
+			.entry-meta {
+				color: $color__brand-gold;
+	
+				> .posted-on {
+					color: #fff;
+				}
+			}
+
+			.entry-excerpt {
+				color: #fff;
+			}
+
+			.circle {
+				@include circle($color__brand-gold);
+				cursor: pointer;
+
+				&::before {
+					font-family: 'Dashicons';
+					content: '\f347';
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					color: #fff
+				}
+			}
+		}
 	}
 
 	.wp-block-separator {
@@ -49,9 +89,24 @@
 .archive {
 	> .page-header {
 		padding: 6rem 0;
+		position: relative;
 
-		> h1 {
-			color: #fff;
+		&.has-image {
+			&::before {
+				@include image-overlay(none);
+			}
+	
+			> h1 {
+				color: #fff;
+				position: relative;
+			}
+	
+			> .archive-description {
+				> p {
+					color: #fff;
+					position: relative;
+				}
+			}
 		}
 
 		&.no-image {
@@ -61,14 +116,43 @@
 		}
 	}
 
-	.post-thumbnail {
-		display: block;
-		padding-bottom: 1.5rem;
-	}
+	.archive-posts__post {
+		padding-bottom: 3rem;
 
-	.entry-title {
-		> a {
-			color: $color__brand-brown-dark;
+		&:last-child {
+			padding-bottom: 0;
+		}
+
+		.post-thumbnail {
+			display: block;
+			padding-bottom: 1.5rem;
+		}
+	
+		.entry-title {
+			> a {
+				color: $color__brand-brown-dark;
+			}
+		}
+	}
+}
+
+.contact-form-header {
+	.admin-email {
+		font-weight: 600;
+
+		> .circle {
+			@include circle($color__brand-gold);
+			margin-right: 10px;
+			
+			&::before {
+				font-family: 'Dashicons';
+				content: "\f465";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: #fff;
+			}
 		}
 	}
 }
@@ -76,10 +160,6 @@
 .contact-form {
 	input[type="text"],
 	textarea {
-		width: 100%;
-		border-radius: 5px;
-		padding: 10px;
-		height: 50px;
 		margin-bottom: 20px;
 	}
 }

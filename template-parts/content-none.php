@@ -7,7 +7,7 @@
 
 ?>
 
-<section class="no-results not-found">
+<section class="no-results not-found text-center">
 	<div class="container">
 		<header class="page-header">
 			<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'eirerepublic' ); ?></h1>

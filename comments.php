@@ -20,64 +20,63 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div class="container">
-	<div class="row">
-		<div class="col-12 col-lg-8 offset-lg-2">
-			<div id="comments" class="comments-area mt-5">
-
-				<?php
-				// You can start editing here -- including this comment!
-				if ( have_comments() ) :
-					?>
-					<h3 class="comments-title">
-						<?php
-						$eirerepublic_comment_count = get_comments_number();
-						if ( '1' === $eirerepublic_comment_count ) {
-							printf(
-								/* translators: 1: title. */
-								esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'eirerepublic' ),
-								'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-							);
-						} else {
-							printf( 
-								/* translators: 1: comment count number, 2: title. */
-								esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $eirerepublic_comment_count, 'comments title', 'eirerepublic' ) ),
-								number_format_i18n( $eirerepublic_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-								'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-							);
-						}
-						?>
-					</h3><!-- .comments-title -->
-
-					<?php the_comments_navigation(); ?>
-
-					<ol class="comment-list">
-						<?php
-						wp_list_comments(
-							array(
-								'style'      => 'ol',
-								'short_ping' => true,
-							)
-						);
-						?>
-					</ol><!-- .comment-list -->
-
+	<section id="comments" class="comments-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-8 offset-lg-2">
 					<?php
-					the_comments_navigation();
-
-					// If comments are closed and there are comments, let's leave a little note, shall we?
-					if ( ! comments_open() ) :
+					// You can start editing here -- including this comment!
+					if ( have_comments() ) :
 						?>
-						<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'eirerepublic' ); ?></p>
+						<h3 class="comments-title">
+							<?php
+							$eirerepublic_comment_count = get_comments_number();
+							if ( '1' === $eirerepublic_comment_count ) {
+								printf(
+									/* translators: 1: title. */
+									esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'eirerepublic' ),
+									'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+								);
+							} else {
+								printf( 
+									/* translators: 1: comment count number, 2: title. */
+									esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $eirerepublic_comment_count, 'comments title', 'eirerepublic' ) ),
+									number_format_i18n( $eirerepublic_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+								);
+							}
+							?>
+						</h3><!-- .comments-title -->
+
+						<?php the_comments_navigation(); ?>
+
+						<ol class="comment-list">
+							<?php
+							wp_list_comments(
+								array(
+									'style'      => 'ol',
+									'short_ping' => true,
+								)
+							);
+							?>
+						</ol><!-- .comment-list -->
+
 						<?php
-					endif;
+						the_comments_navigation();
 
-				endif; // Check for have_comments().
+						// If comments are closed and there are comments, let's leave a little note, shall we?
+						if ( ! comments_open() ) :
+							?>
+							<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'eirerepublic' ); ?></p>
+							<?php
+						endif;
 
-				comment_form();
-				?>
+					endif; // Check for have_comments().
 
-			</div><!-- #comments -->
+					comment_form();
+					?>
+
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
+	</section><!-- #comments -->
