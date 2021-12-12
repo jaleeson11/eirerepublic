@@ -3,7 +3,9 @@
  * Template part for displaying posts
  * 
  * @package eirerepublic
+ * 
  */
+
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -19,13 +21,14 @@
 								the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 							endif;
 
-							if ( 'post' === get_post_type() ) : ?>
+							if ( 'post' === get_post_type() ) :
+							?>
 								<div class="entry-meta mb-3">
-									<?php eirerepublic_posted_on() ?>
+									<?php eirerepublic_posted_on(); ?>
 								</div><!-- .entry-meta -->
 							<?php endif; ?>
 
-							<p class="entry-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
+							<p class="entry-excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 20 ) ); ?></p>
 							
 							<span class="circle"></span>
 						</div>						
@@ -40,7 +43,7 @@
 						<?php the_content(); ?>
 					</div>
 					<!-- <div class="col-12 col-lg-3">
-						<?php if (is_active_sidebar('about')) : ?>
+						<?php if ( is_active_sidebar('about') ) : ?>
 							<?php dynamic_sidebar('about') ?>
 						<?php endif; ?>	
 					</div> -->
@@ -49,7 +52,7 @@
 		</div><!-- .entry-content -->
 	</article><!-- #post-<?php the_ID(); ?> -->
 
-	<?php if (has_post_thumbnail()): ?>
+	<?php if ( has_post_thumbnail() ): ?>
 	<style>
 		.entry-header {
 			background-image: url(<?php the_post_thumbnail_url(); ?>);
