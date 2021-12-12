@@ -196,7 +196,6 @@ add_action( 'widgets_init', 'eirerepublic_widgets_init' );
  */
 function eirerepublic_scripts() {
 	wp_enqueue_style( 'eirerepublic-style', get_template_directory_uri() . '/dist/style.css', array(), _S_VERSION );
-	wp_style_add_data( 'eirerepublic-style', 'rtl', 'replace' );
 	wp_enqueue_script( 'eirerepublic-scripts', get_template_directory_uri() . '/dist/app.js', array('jquery'), _S_VERSION, true );
 	wp_enqueue_script( 'bootstrap-scripts', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), _S_VERSION, true );
 	wp_enqueue_style('dashicons');
