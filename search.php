@@ -24,23 +24,23 @@ get_header();
 
 		</header><!-- .page-header -->
 
-		<?php
-		/* Start the Loop */
-		while ( have_posts() ) :
-			the_post();
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
 
-			get_template_part( 'template-parts/post', 'archive' );
+				get_template_part( 'template-parts/post', 'archive' );
 
-		endwhile;
+			endwhile;
 
-		the_posts_navigation();
+			the_posts_navigation();
 
-		else :
+			else :
 
-		get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'template-parts/content', 'none' );
 
-		endif;
-		?>
+			endif;
+			?>
 		
 	</main><!-- #main -->
 
