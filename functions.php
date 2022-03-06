@@ -7,9 +7,9 @@
  * @package eirerepublic
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'EIREREPUBLIC_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'EIREREPUBLIC_VERSION', '1.0.0' );
 }
 
 if ( ! function_exists( 'eirerepublic_setup' ) ) :
