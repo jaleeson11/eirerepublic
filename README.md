@@ -1,7 +1,7 @@
 EireRepublic
 ===
 
-A custom Wordpress theme based on the [Underscores](https://underscores.me/) starter theme. 
+> A custom Wordpress theme based on the [Underscores](https://underscores.me/) starter theme. 
 
 Originally designed & built for an all Irish themed blog.
 
