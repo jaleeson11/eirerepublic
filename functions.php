@@ -217,15 +217,17 @@ function get_custom_logo_url()
 }
 
 /**
- * Rdirect to homepage if author page
+ * Theme redirects.
  */
-function disable_author_page() {
-    if ( is_author() ) {
-        wp_redirect( home_url('/') ); 
-        exit; 
-    }
+function eirerepublic_redirect() {
+	if ( is_author() ||
+		 is_tag()
+	) {
+		wp_safe_redirect( home_url( '/' ), 301 ); 
+		exit; 
+	}
 }
-add_action('template_redirect', 'disable_author_page');
+add_action( 'template_redirect', 'eirerepublic_redirect' );
 
 /**
  * Adds read more permalink to end of excerpt
