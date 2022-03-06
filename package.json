@@ -21,12 +21,10 @@
     "cross-env": "^7.0.3",
     "dir-archiver": "^1.1.1",
     "laravel-mix": "^6.0.34",
-    "node-sass": "^4.14.1",
     "resolve-url-loader": "^4.0.0",
     "webpack": "^5.62.1"
   },
   "scripts": {
-    "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
     "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map",
