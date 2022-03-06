@@ -1,9 +1,5 @@
 /node_modules
 /vendor
-package-lock.json
-composer.lock
 style.css.map
 .DS_Store
-
-# ignore distribution directory
-dist/*
+.vscode
